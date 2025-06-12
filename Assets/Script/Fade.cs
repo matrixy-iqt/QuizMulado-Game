@@ -64,7 +64,15 @@ public class Fade : MonoBehaviour
 
     public void SairDoPrograma()
     {
-        Application.Quit();
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #elif UNITY_IOS
+            // On iOS, it's generally bad practice to quit programmatically.
+            // Consider removing this or disabling the button.
+            Debug.Log("Application.Quit() called on iOS. This is generally discouraged.");
+        #else
+            Application.Quit();
+        #endif
     }
 
     public void OnGUI()

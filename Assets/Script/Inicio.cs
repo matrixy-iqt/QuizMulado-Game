@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 using System;
 
 /* 
@@ -488,7 +489,7 @@ public class Inicio : MonoBehaviour
 
     private string CorpoURL(string url)
     {
-        return WWW.EscapeURL(url).Replace("+", "%20");
+        return UnityWebRequest.EscapeURL(url).Replace("+", "%20");
     }
 
     private IEnumerator AnimAfterCriacao()
