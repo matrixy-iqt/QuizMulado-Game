@@ -1,6 +1,7 @@
-﻿using System.Collections;
+﻿// TODO: Unity Ads SDK needs to be updated to a version compatible with Unity 2022.3 and this code needs to be reimplemented.
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Advertisements;
+// using UnityEngine.Advertisements; // TODO: Unity Ads SDK needs to be updated
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -13,11 +14,12 @@ using UnityEngine.SceneManagement;
 public class Loja : MonoBehaviour
 {
 
-#if UNITY_IOS
-	private string gameId = "1581950";
-#elif UNITY_ANDROID
-    private string gameId = "1581949";
-#endif
+// TODO: Unity Ads SDK needs to be updated. Game IDs are usually managed via Unity Dashboard / Services panel now.
+//#if UNITY_IOS
+//	private string gameId = "1581950";
+//#elif UNITY_ANDROID
+//    private string gameId = "1581949";
+//#endif
 
     #region Variaveis
 
@@ -266,6 +268,8 @@ public class Loja : MonoBehaviour
 
     public void ChamarAnuncio()
     {
+        // TODO: Unity Ads SDK needs to be updated to a version compatible with Unity 2022.3 and this code needs to be reimplemented.
+        /*
         AtivarRecompensa();
 
         if (Advertisement.isSupported)
@@ -275,6 +279,8 @@ public class Loja : MonoBehaviour
             options.resultCallback = HandleShowResult;
             Advertisement.Show("rewardedVideo", options);
         }
+        */
+        Debug.LogWarning("Unity Ads called but is currently commented out for SDK update.");
     }
 
     public void BotaoPegarRecompensa()
@@ -368,6 +374,8 @@ public class Loja : MonoBehaviour
         }
     }
 
+    // TODO: Unity Ads SDK needs to be updated to a version compatible with Unity 2022.3 and this code needs to be reimplemented.
+    /*
     private void HandleShowResult(ShowResult result)
     {
         if (result == ShowResult.Finished)
@@ -383,6 +391,7 @@ public class Loja : MonoBehaviour
             //Falha
         }
     }
+    */
 
     private void EscolhaPoder()
     {
